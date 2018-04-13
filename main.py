@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Demonstrates using kv language to create some simple buttons and a
 label, with each button modifying the label text.
@@ -10,32 +11,47 @@ from kivy.properties import ObjectProperty
 
 Builder.load_string('''
 <MainWidget>:
-    BoxLayout:
-        orientation: 'vertical'
-        Button:
-            text: 'some string '
-            on_press: the_right_pane.text += self.text
-        Button:
-            text: 'one two three four '
-            on_press: the_right_pane.text += self.text
-        Button:
-            text: 'follow the yellow brick road '
-            on_press: the_right_pane.text += self.text
-        Button:
-            text: 'five six seven eight '
-            on_press: the_right_pane.text += self.text
-        Button:
-            text: 'CLEAR LABEL'
-            on_press: root.update_text()
-        Label:
-            id: txt_inpt
-            text: app.text
-    Label:
-        id: the_right_pane
-        text: ''
-        text_size: self.size
-        halign: 'center'
-        valign: 'middle'
+    TabbedPanel:
+        do_default_tab: False
+        
+        TabbedPanelItem:
+            text: 'Параметры'
+            GridLayout:
+                cols: 3
+                Button:
+                    text: "Прихожая"
+                Button:
+                    text: "Корридор"
+                Spinner:
+                    text: "Мощность"
+                    values: "60", "80", "100"
+                    size_hint: (None, None)
+                    size: (100, 44)
+            GridLayout:
+                cols: 2
+                Button:
+                    text: "Комната1"
+                Spinner:
+                    text: "Мощность"
+                    values: "60", "80", "100"
+                    size_hint: (None, None)
+                    size: (100, 44)
+                Button:
+                    text: "Комната2"
+                Spinner:
+                    text: "Мощность"
+                    values: "60", "80", "100"
+                    size_hint: (None, None)
+                    size: (100, 44)
+                
+        
+        TabbedPanelItem:
+            text: 'Мониторинг'
+            BoxLayout:
+        
+        TabbedPanelItem:
+            text: 'Расписание'
+            BoxLayout:
 ''')
 
 
