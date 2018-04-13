@@ -16,33 +16,35 @@ Builder.load_string('''
         
         TabbedPanelItem:
             text: 'Параметры'
-            GridLayout:
-                cols: 3
-                Button:
-                    text: "Прихожая"
-                Button:
-                    text: "Корридор"
-                Spinner:
-                    text: "Мощность"
-                    values: "60", "80", "100"
-                    size_hint: (None, None)
-                    size: (100, 44)
-            GridLayout:
-                cols: 2
-                Button:
-                    text: "Комната1"
-                Spinner:
-                    text: "Мощность"
-                    values: "60", "80", "100"
-                    size_hint: (None, None)
-                    size: (100, 44)
-                Button:
-                    text: "Комната2"
-                Spinner:
-                    text: "Мощность"
-                    values: "60", "80", "100"
-                    size_hint: (None, None)
-                    size: (100, 44)
+            BoxLayout:
+                orientation: 'vertical'
+                GridLayout:
+                    cols: 3
+                    Button:
+                        text: "Прихожая"
+                    Button:
+                        text: "Корридор"
+                    Spinner:
+                        text: "Мощность"
+                        values: "60", "80", "100"
+                        size_hint: (None, None)
+                        size: (100, 44)
+                GridLayout:
+                    cols: 2
+                    Button:
+                        text: "Комната1"
+                    Spinner:
+                        text: "Мощность"
+                        values: "60", "80", "100"
+                        size_hint: (None, None)
+                        size: (100, 44)
+                    Button:
+                        text: "Комната2"
+                    Spinner:
+                        text: "Мощность"
+                        values: "60", "80", "100"
+                        size_hint: (None, None)
+                        size: (100, 44)
                 
         
         TabbedPanelItem:
